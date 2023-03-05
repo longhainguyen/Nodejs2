@@ -14,9 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   MarkDown.init({
-    doctorID: DataTypes.STRING,
-    clinicID: DataTypes.STRING,
-    specialtyid: DataTypes.STRING,
+    doctorID: DataTypes.INTEGER,
+    clinicID: DataTypes.INTEGER,
+    specialtyid: DataTypes.INTEGER,
     contentHTML: DataTypes.STRING,
     contentMarkdown: DataTypes.STRING,
     description: DataTypes.STRING

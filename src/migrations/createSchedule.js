@@ -22,7 +22,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       doctorId: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       }
     });
   },

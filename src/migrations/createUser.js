@@ -12,6 +12,9 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
+      password: {
+        type: Sequelize.STRING
+      },
       firstName: {
         type: Sequelize.STRING
       },
@@ -24,7 +27,16 @@ module.exports = {
       gender: {
         type: Sequelize.BOOLEAN
       },
-      roleid: {
+      roleId: {
+        type: Sequelize.INTEGER
+      },
+      phonenumber: {
+        type: Sequelize.STRING
+      },
+      positionId: {
+        type: Sequelize.INTEGER
+      },
+      image: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -39,5 +51,5 @@ module.exports = {
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Users');
-  }
+  } 
 };
