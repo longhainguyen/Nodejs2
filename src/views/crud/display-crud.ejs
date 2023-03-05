@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+
+        .snip1582 {
+            background-color: #c47135;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: 'BenchNine', Arial, sans-serif;
+            font-size: 1em;
+            font-size: 11px;
+            line-height: 1em;
+            margin: 7px 20px;
+            outline: none;
+            padding: 6px 20px 5px;
+            position: relative;
+            text-transform: uppercase;
+            font-weight: 100px;
+        }
+
+        .snip1582:before,
+        .snip1582:after {
+            border-color: transparent;
+            -webkit-transition: all 0.25s;
+            transition: all 0.25s;
+            border-style: solid;
+            border-width: 0;
+            content: "";
+            height: 24px;
+            position: absolute;
+            width: 24px;
+        }
+
+        .snip1582:before {
+            border-color: #c47135;
+            border-top-width: 2px;
+            left: 0px;
+            top: -5px;
+        }
+
+        .snip1582:after {
+            border-bottom-width: 2px;
+            border-color: #c47135;
+            bottom: -5px;
+            right: 0px;
+        }
+
+        .snip1582:hover,
+        .snip1582.hover {
+            background-color: #c47135;
+        }
+
+        .snip1582:hover:before,
+        .snip1582.hover:before,
+        .snip1582:hover:after,
+        .snip1582.hover:after {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Let the table borders collapse</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th style="width: 250px;">Action</th>
+        </tr>
+        <% for(var i=0; i < data.length; i++) { %>
+            <tr>
+                <td>
+                    <%= data[i].id %>
+                </td>
+                <td>
+                    <%= data[i].firstName %>
+                </td>
+                <td>
+                    <%= data[i].lastName %>
+                </td>
+                <td>
+                    <%= data[i].email %>
+                </td>
+                <td>
+                    <%= data[i].address %>
+                </td>
+                <td>
+                    <a class="snip1582" type="button">Edit</a>
+                    <a class="snip1582" type="button">Delete</a>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+</body>
+
+</html>

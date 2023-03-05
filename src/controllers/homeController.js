@@ -26,8 +26,14 @@ let getCRUD = (rep, res) => {
 let getPostCRUD = async (rep, res) => {
     let message = await CRUDservice.createUserCRUD(rep.body)
     console.log(message)
-    console.log(rep.body)
     return res.send("post crud from server")
+}
+
+let displayCRUD = async (rep, res) => {
+    let message = await CRUDservice.displayUserCRUD();
+    return res.render("./crud/display-crud.ejs", {
+        data:message
+    })
 }
 
 module.exports = {
@@ -35,4 +41,5 @@ module.exports = {
     getAboutMe:getAboutMe,
     getCRUD:getCRUD,
     getPostCRUD:getPostCRUD,
+    displayCRUD:displayCRUD,
 }

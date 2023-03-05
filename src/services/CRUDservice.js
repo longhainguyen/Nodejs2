@@ -35,6 +35,20 @@ let hashUserPassword = (password) => {
     })
 }
 
+let displayUserCRUD = async() => {
+    return new Promise( async (resolve, reject) => {
+        try {
+            let dataOfUser = await db.User.findAll({
+                raw: true,
+            });
+            resolve(dataOfUser)
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
+
 module.exports = {
     createUserCRUD:createUserCRUD,
+    displayUserCRUD:displayUserCRUD,
 }
