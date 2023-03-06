@@ -48,7 +48,26 @@ let displayUserCRUD = async() => {
     })
 }
 
+let getInfoUserByID = async(user_id) => {
+    return new Promise( async(resolve, reject) => {
+        try {
+            let inFoUser =await db.User.findOne({
+                where:{id : user_id },
+                raw:true,
+            });
+            if(inFoUser) {
+                resolve(inFoUser)
+            }else {
+                resolve([])
+            }
+        } catch (e) {
+            reject(e)
+        }
+    })
+} 
+
 module.exports = {
     createUserCRUD:createUserCRUD,
     displayUserCRUD:displayUserCRUD,
+    getInfoUserByID:getInfoUserByID,
 }

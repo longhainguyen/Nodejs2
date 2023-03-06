@@ -25,7 +25,6 @@ let getCRUD = (rep, res) => {
 
 let getPostCRUD = async (rep, res) => {
     let message = await CRUDservice.createUserCRUD(rep.body)
-    console.log(message)
     return res.send("post crud from server")
 }
 
@@ -36,10 +35,22 @@ let displayCRUD = async (rep, res) => {
     })
 }
 
+let getEditCRUB = async(rep, res) => {
+    let user_id = rep.query.id
+    let getInfoByID = await CRUDservice.getInfoUserByID(user_id);
+    if(user_id) {
+        console.log(getInfoByID)
+    }else {
+        console.log("Not found ID")
+    }
+    res.send("Hello from edit crud")
+}
+
 module.exports = {
     getHomepage:getHomepage,
     getAboutMe:getAboutMe,
     getCRUD:getCRUD,
     getPostCRUD:getPostCRUD,
     displayCRUD:displayCRUD,
+    getEditCRUB:getEditCRUB,
 }
